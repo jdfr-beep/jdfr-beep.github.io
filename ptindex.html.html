@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Método Yuki — Sabedoria Japonesa para o seu Lar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Inter",sans-serif;background:#faf8f4;color:#2a2218;}
+.serif{font-family:"Playfair Display",Georgia,serif;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 48px;background:#faf8f4;border-bottom:1px solid #e8e0d0;position:sticky;top:0;z-index:100;}
+.nav-logo{font-family:"Playfair Display",serif;font-size:14px;letter-spacing:0.15em;color:#1a1209;}
+.nav-cta{background:#8c1c1c;color:#fff;border:none;padding:10px 22px;font-size:12px;font-weight:500;letter-spacing:0.08em;cursor:pointer;border-radius:2px;}
+.timer-bar{background:#1a1209;text-align:center;padding:11px;font-size:12px;color:#c8b97a;letter-spacing:0.1em;}
+.timer-bar b{color:#fff;}
+.hero{text-align:center;padding:90px 40px 70px;max-width:680px;margin:0 auto;}
+.hero-eyebrow{font-size:11px;letter-spacing:0.22em;color:#8c6a3a;margin-bottom:30px;text-transform:uppercase;}
+.hero h1{font-family:"Playfair Display",serif;font-size:52px;font-weight:400;line-height:1.15;color:#1a1209;margin-bottom:22px;}
+.hero h1 em{font-style:italic;color:#8c1c1c;}
+.hero-rule{width:48px;height:1px;background:#d4c4a0;margin:32px auto;}
+.hero-sub{font-size:16px;color:#6a5a3a;line-height:1.8;font-weight:300;}
+.books-section{padding:0 40px 100px;max-width:1040px;margin:0 auto;}
+.books-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;}
+.book-card{background:#fff;border:1px solid #e0d4bc;border-radius:4px;padding:36px 28px;display:flex;flex-direction:column;position:relative;}
+.book-card.featured{border:2px solid #8c1c1c;background:#fffdf9;}
+.badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#8c1c1c;color:#fff;font-size:10px;font-weight:500;letter-spacing:0.12em;padding:5px 16px;border-radius:2px;white-space:nowrap;text-transform:uppercase;}
+.book-cover-img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:3px;margin-bottom:22px;box-shadow:0 4px 20px rgba(0,0,0,0.12);}
+.book-cover-bundle{width:100%;aspect-ratio:3/4;border-radius:3px;margin-bottom:22px;display:flex;align-items:center;justify-content:center;background:#f5f0e8;border:1px solid #e0d4bc;overflow:hidden;position:relative;}
+.bundle-img-1{position:absolute;left:5%;top:5%;width:52%;height:90%;object-fit:cover;border-radius:2px;box-shadow:0 2px 12px rgba(0,0,0,0.15);}
+.bundle-img-2{position:absolute;right:5%;top:12%;width:52%;height:90%;object-fit:cover;border-radius:2px;box-shadow:0 2px 12px rgba(0,0,0,0.15);}
+.card-eyebrow{font-size:10px;letter-spacing:0.18em;color:#8c6a3a;margin-bottom:8px;text-transform:uppercase;}
+.card-title{font-family:"Playfair Display",serif;font-size:22px;color:#1a1209;line-height:1.3;margin-bottom:12px;}
+.card-desc{font-size:13px;color:#6a5a3a;line-height:1.75;flex:1;margin-bottom:22px;}
+.save-pill{display:inline-block;background:#fdf0e8;border:1px solid #e8c4a0;color:#8c4a1c;font-size:10px;letter-spacing:0.1em;padding:4px 12px;border-radius:2px;margin-bottom:14px;text-transform:uppercase;}
+.price-old{font-size:13px;color:#b0a090;text-decoration:line-through;margin-bottom:2px;}
+.price-now{font-family:"Playfair Display",serif;font-size:38px;color:#1a1209;margin-bottom:18px;}
+.price-now sup{font-size:18px;vertical-align:super;color:#8c1c1c;}
+.price-now sub{font-size:16px;color:#8a7a6a;}
+.btn-buy{width:100%;background:#8c1c1c;color:#fff;border:none;padding:15px;font-size:13px;font-weight:500;letter-spacing:0.07em;cursor:pointer;border-radius:2px;font-family:"Inter",sans-serif;margin-bottom:12px;}
+.btn-buy:hover{background:#6e1414;}
+.btn-outline{width:100%;background:transparent;color:#8a7a6a;border:1px solid #e0d4bc;padding:11px;font-size:12px;cursor:pointer;border-radius:2px;font-family:"Inter",sans-serif;}
+.card-meta{margin-top:14px;font-size:11px;color:#a09080;line-height:1.9;}
+.pix-badge{display:inline-block;background:#1a9e6e;color:#fff;font-size:10px;padding:3px 8px;border-radius:2px;margin-top:6px;letter-spacing:0.05em;}
+.trust-strip{border-top:1px solid #e8e0d0;border-bottom:1px solid #e8e0d0;padding:40px;background:#fff;}
+.trust-inner{max-width:760px;margin:0 auto;display:flex;justify-content:space-around;align-items:center;gap:20px;flex-wrap:wrap;}
+.trust-item{text-align:center;}
+.trust-icon{font-size:20px;margin-bottom:8px;color:#8c1c1c;}
+.trust-label{font-size:11px;color:#8a7a6a;letter-spacing:0.07em;}
+.inside-section{max-width:800px;margin:0 auto;padding:80px 40px;}
+.section-eyebrow{font-size:11px;letter-spacing:0.2em;color:#8c6a3a;margin-bottom:16px;text-transform:uppercase;text-align:center;}
+.section-title{font-family:"Playfair Display",serif;font-size:32px;color:#1a1209;text-align:center;font-weight:400;margin-bottom:48px;line-height:1.3;}
+.chapters-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.chapter-item{background:#fff;border:1px solid #e8e0d0;border-radius:3px;padding:16px 20px;display:flex;gap:14px;align-items:flex-start;}
+.chapter-num{font-family:"Playfair Display",serif;font-size:22px;color:#d4c4a0;font-weight:400;flex-shrink:0;line-height:1;}
+.chapter-name{font-size:13px;color:#2a2218;font-weight:500;margin-bottom:3px;}
+.chapter-sub{font-size:12px;color:#8a7a6a;}
+.about-section{background:#1a1209;color:#e8dcc8;padding:80px 40px;}
+.about-inner{max-width:680px;margin:0 auto;}
+.about-para{font-size:15px;color:#a09070;line-height:1.9;margin-bottom:18px;font-weight:300;}
+.about-sig{font-family:"Playfair Display",serif;font-style:italic;color:#c8b97a;font-size:22px;margin-top:32px;display:block;}
+.kanji-line{font-size:13px;color:#3a2e1e;letter-spacing:0.15em;text-align:center;padding:24px 0 0;}
+.testimonials{padding:80px 40px;background:#faf8f4;}
+.testimonials-inner{max-width:880px;margin:0 auto;}
+.test-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px;}
+.test-card{background:#fff;border:1px solid #e8e0d0;border-radius:4px;padding:28px;}
+.stars{color:#8c1c1c;font-size:13px;letter-spacing:3px;margin-bottom:14px;}
+.test-text{font-size:14px;color:#4a3a2a;line-height:1.75;font-style:italic;margin-bottom:16px;}
+.test-author{font-size:12px;color:#a09080;}
+.trust-count{text-align:center;margin-top:36px;font-size:13px;color:#8a7a6a;}
+.trust-count strong{display:block;font-family:"Playfair Display",serif;font-size:36px;color:#1a1209;margin-bottom:4px;}
+.guarantee{background:#fff;border-top:1px solid #e8e0d0;border-bottom:1px solid #e8e0d0;padding:70px 40px;text-align:center;}
+.guarantee-inner{max-width:520px;margin:0 auto;}
+.guarantee-badge{width:80px;height:80px;border-radius:50%;border:2px solid #8c1c1c;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:28px;color:#8c1c1c;}
+.guarantee h2{font-family:"Playfair Display",serif;font-size:28px;color:#1a1209;font-weight:400;margin-bottom:16px;}
+.guarantee p{font-size:14px;color:#6a5a3a;line-height:1.85;}
+.faq{padding:80px 40px;background:#faf8f4;}
+.faq-inner{max-width:620px;margin:0 auto;}
+.faq-item{border-bottom:1px solid #e8e0d0;padding:20px 0;cursor:pointer;}
+.faq-q{font-size:14px;color:#2a2218;display:flex;justify-content:space-between;align-items:center;gap:12px;font-weight:500;}
+.faq-chevron{font-size:14px;color:#a09080;flex-shrink:0;transition:transform 0.2s;}
+.faq-a{font-size:13px;color:#6a5a3a;line-height:1.8;margin-top:14px;display:none;}
+.faq-item.open .faq-a{display:block;}
+.faq-item.open .faq-chevron{transform:rotate(180deg);}
+.final-cta{background:#1a1209;padding:90px 40px;text-align:center;}
+.final-cta h2{font-family:"Playfair Display",serif;font-size:38px;color:#f0e8d0;font-weight:400;line-height:1.3;margin-bottom:16px;}
+.final-cta p{font-size:14px;color:#7a6a4a;margin-bottom:40px;}
+.final-cta .btn-buy{display:inline-block;width:auto;padding:17px 44px;font-size:14px;}
+.final-cta .kanji-line{color:#2a2218;padding:40px 0 0;}
+footer{padding:28px 48px;border-top:1px solid #e8e0d0;display:flex;justify-content:space-between;align-items:center;background:#faf8f4;}
+.footer-logo{font-family:"Playfair Display",serif;font-size:13px;color:#a09080;letter-spacing:0.12em;}
+.footer-links{font-size:11px;color:#c0b090;letter-spacing:0.06em;}
+@media(max-width:768px){
+  .books-grid{grid-template-columns:1fr;}
+  nav{padding:14px 20px;}
+  .hero{padding:60px 24px 50px;}
+  .hero h1{font-size:36px;}
+  .books-section{padding:0 20px 60px;}
+  .chapters-grid{grid-template-columns:1fr;}
+  .test-grid{grid-template-columns:1fr;}
+  .trust-inner{flex-wrap:wrap;gap:28px;}
+  footer{flex-direction:column;gap:12px;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">O MÉTODO YUKI</div>
+  <button class="nav-cta" onclick="document.getElementById('livros').scrollIntoView({behavior:'smooth'})">Acesso Imediato →</button>
+</nav>
+
+<div class="timer-bar">
+  ♟ Promoção de Lançamento — termina em <b id="timer">01:32:34</b>
+</div>
+
+<div class="hero">
+  <div class="hero-eyebrow">Sabedoria Japonesa · Lares Reais · Resultados Imediatos</div>
+  <h1 class="serif">Um sistema japonês<br>de séculos para o seu lar.<br><em>Finalmente escrito.</em></h1>
+  <div class="hero-rule"></div>
+  <p class="hero-sub">O conhecimento de limpeza transmitido entre lares japoneses — traduzido para casas ocidentais. Sem produtos de marca. Sem complicação. Apenas o que realmente funciona.</p>
+</div>
+
+<div id="livros" class="books-section">
+  <div class="books-grid">
+
+    <!-- LIVRO 1: CLEAN -->
+    <div class="book-card">
+      <img class="book-cover-img" src="cover-clean-pt.jpg" alt="O Método Yuki: Clean">
+      <div class="card-eyebrow">Livro 1</div>
+      <div class="card-title serif">O Método Yuki:<br>Clean</div>
+      <div class="card-desc">O método japonês para limpar cada cômodo da sua casa. Substitua 23 produtos de limpeza por 5 ingredientes que custam menos de R$100. 38 capítulos, 140+ páginas.</div>
+      <div class="price-old">R$74,90</div>
+      <div class="price-now serif"><sup>R$</sup>37<sub>,00</sub></div>
+      <button class="btn-buy" onclick="window.location.href='https://pay.hotmart.com/W107519795I'">Quero este Livro →</button>
+      <div class="card-meta">🔒 Pagamento seguro · PDF imediato por e-mail<br>✓ Vendedor verificado · Garantia de 7 dias<br><span class="pix-badge">✓ Pix · Boleto · Cartão</span></div>
+    </div>
+
+    <!-- BUNDLE -->
+    <div class="book-card featured">
+      <div class="badge">Melhor Valor</div>
+      <div class="book-cover-bundle">
+        <img class="bundle-img-1" src="cover-clean-pt.jpg" alt="Clean">
+        <img class="bundle-img-2" src="cover-home-pt.jpg" alt="Home">
+      </div>
+      <div class="card-eyebrow">Coleção Completa</div>
+      <div class="card-title serif">A Biblioteca<br>Completa</div>
+      <div class="card-desc">Os dois livros. Um preço imbatível. A biblioteca completa do Método Yuki — limpe cada cômodo e construa o sistema que impede os problemas de voltarem.</div>
+      <div class="save-pill">VOCÊ ECONOMIZA R$17 vs. comprar separado</div>
+      <div class="price-old">R$149,80</div>
+      <div class="price-now serif"><sup>R$</sup>67<sub>,00</sub></div>
+      <button class="btn-buy" onclick="window.location.href='https://pay.hotmart.com/P107519841R'">Quero os Dois Livros →</button>
+      <button class="btn-outline">Pagamento único · Acesso vitalício</button>
+      <div class="card-meta">🔒 SSL 256-bit · Entrega instantânea<br>✓ Garantia de 7 dias<br><span class="pix-badge">✓ Pix · Boleto · Cartão</span></div>
+    </div>
+
+    <!-- LIVRO 2: HOME -->
+    <div class="book-card">
+      <img class="book-cover-img" src="cover-home-pt.jpg" alt="O Método Yuki: Home">
+      <div class="card-eyebrow">Livro 2</div>
+      <div class="card-title serif">O Método Yuki:<br>Home</div>
+      <div class="card-desc">As 180 regras com as quais os lares japoneses funcionam há gerações. A espinha dorsal de uma casa limpa, organizada e sem desperdício.</div>
+      <div class="price-old">R$94,90</div>
+      <div class="price-now serif"><sup>R$</sup>47<sub>,00</sub></div>
+      <button class="btn-buy" onclick="window.location.href='https://pay.hotmart.com/P107519816L'">Quero este Livro →</button>
+      <div class="card-meta">🔒 Pagamento seguro · PDF imediato por e-mail<br>✓ Vendedor verificado · Garantia de 7 dias<br><span class="pix-badge">✓ Pix · Boleto · Cartão</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item"><div class="trust-icon">⬇</div><div class="trust-label">Download Imediato</div></div>
+    <div class="trust-item"><div class="trust-icon">🔒</div><div class="trust-label">Pagamento Seguro</div></div>
+    <div class="trust-item"><div class="trust-icon">✦</div><div class="trust-label">Garantia 7 Dias</div></div>
+    <div class="trust-item"><div class="trust-icon">💳</div><div class="trust-label">Pix · Boleto · Cartão</div></div>
+    <div class="trust-item"><div class="trust-icon">〒</div><div class="trust-label">400 Anos de Tradição</div></div>
+  </div>
+</div>
+
+<!-- O QUE ESTÁ DENTRO -->
+<div class="inside-section">
+  <div class="section-eyebrow">O que está dentro</div>
+  <h2 class="section-title serif">38 capítulos. Cada cômodo.<br>Cada problema — resolvido.</h2>
+  <div class="chapters-grid">
+    <div class="chapter-item"><div class="chapter-num">01</div><div><div class="chapter-name">Os Perigos Ocultos da Cozinha</div><div class="chapter-sub">9 fontes tóxicas — e como eliminá-las</div></div></div>
+    <div class="chapter-item"><div class="chapter-num">02</div><div><div class="chapter-name">O Reset do Banheiro</div><div class="chapter-sub">Rejunte preto, mofo, calcário — eliminados de vez</div></div></div>
+    <div class="chapter-item"><div class="chapter-num">03</div><div><div class="chapter-name">Odores da Casa</div><div class="chapter-sub">Os 7 focos que ninguém identifica</div></div></div>
+    <div class="chapter-item"><div class="chapter-num">04</div><div><div class="chapter-name">Organização</div><div class="chapter-sub">O sistema japonês que mantém a bagunça fora</div></div></div>
+    <div class="chapter-item"><div class="chapter-num">05</div><div><div class="chapter-name">Geladeira & Freezer</div><div class="chapter-sub">Zero desperdício, sem plástico, ordem perfeita</div></div></div>
+    <div class="chapter-item"><div class="chapter-num">06</div><div><div class="chapter-name">O Quarto</div><div class="chapter-sub">Qualidade do sono começa pelo ambiente</div></div></div>
+    <div class="chapter-item"><div class="chapter-num">07</div><div><div class="chapter-name">Lavanderia & Roupas de Cama</div><div class="chapter-sub">Toalhas azedas, roupas com cheiro — resolvidos</div></div></div>
+    <div class="chapter-item"><div class="chapter-num">08</div><div><div class="chapter-name">O Sistema Semanal</div><div class="chapter-sub">Reset de 30 dias + lista de compras completa</div></div></div>
+  </div>
+</div>
+
+<!-- SOBRE YUKI -->
+<div class="about-section">
+  <div class="about-inner">
+    <div class="section-eyebrow" style="text-align:left;color:#8c6a3a;">Uma nota de Yuki</div>
+    <p class="about-para">Não aprendi esses métodos no supermercado. Eles vêm do conhecimento que herdei, dos hábitos com que cresci, e do tempo que passei visitando casas e aldeias japonesas — observando como as famílias mantêm espaços pequenos calmos, limpos e funcionais sem encher os armários de produtos.</p>
+    <p class="about-para">Grande parte desse conhecimento nunca é explicada formalmente. É transmitida em conversas de cozinha, aprendida observando, ou simplesmente repetida porque uma mãe ou avó mostrou à próxima pessoa o que funcionava.</p>
+    <p class="about-para">Estes livros não são sobre fazer sua casa parecer decorada. São sobre gastar menos, desperdiçar menos, e construir uma casa que exija menos de você a cada semana.</p>
+    <span class="about-sig">Yuki</span>
+    <div class="kanji-line">整った家は、整った心をつくる。</div>
+  </div>
+</div>
+
+<!-- DEPOIMENTOS -->
+<div class="testimonials">
+  <div class="testimonials-inner">
+    <div class="section-eyebrow">O que dizem os leitores</div>
+    <h2 class="section-title serif">Mais de 2.300 lares<br>já transformados</h2>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <div class="test-text">"Mudou completamente a forma como penso na limpeza da minha casa. Simples, prático e profundamente eficaz. Joguei fora metade dos meus produtos na primeira semana."</div>
+        <div class="test-author">— Ana P., São Paulo</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★½</div>
+        <div class="test-text">"O livro Home sozinho já vale muito. Tantas pequenas regras que fazem uma diferença enorme no dia a dia. Minha casa funciona em outro nível agora."</div>
+        <div class="test-author">— Carlos M., Rio de Janeiro</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <div class="test-text">"Comprava produto de limpeza por carrinho cheio. Com 5 ingredientes e esse livro — genuinamente não preciso mais de nada. E a casa ficou mais limpa."</div>
+        <div class="test-author">— Fernanda L., Belo Horizonte</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <div class="test-text">"O capítulo de odores foi uma revelação. Passei anos mascarando cheiros. A Yuki vai à fonte — funciona de verdade."</div>
+        <div class="test-author">— Marcos R., Porto Alegre</div>
+      </div>
+    </div>
+    <div class="trust-count"><strong>2.300+</strong>famílias criando lares mais calmos, limpos e organizados</div>
+  </div>
+</div>
+
+<!-- GARANTIA -->
+<div class="guarantee">
+  <div class="guarantee-inner">
+    <div class="guarantee-badge">✦</div>
+    <h2 class="serif">Garantia de 7 Dias,<br>sem perguntas</h2>
+    <p>Reembolso total, sem perguntas. Se o livro não entregar o que é prometido nesta página durante a sua primeira semana, responda ao e-mail de entrega e devolveremos o valor integralmente — imediatamente.</p>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq">
+  <div class="faq-inner">
+    <div class="section-eyebrow" style="text-align:center">Antes de comprar</div>
+    <h2 class="section-title serif">Respostas simples.</h2>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">São livros físicos? <span class="faq-chevron">▾</span></div>
+      <div class="faq-a">Não. São PDFs digitais entregues imediatamente no seu e-mail após o pagamento. Pode ler em qualquer dispositivo — celular, tablet ou computador.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Preciso de produtos japoneses? <span class="faq-chevron">▾</span></div>
+      <div class="faq-a">Não. Os 5 ingredientes do sistema estão disponíveis em qualquer supermercado por menos de R$100. Sem marcas especiais, sem importações.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Por qual livro começo? <span class="faq-chevron">▾</span></div>
+      <div class="faq-a">Se tem um problema específico agora — cheiro, mancha, bagunça — comece pelo Clean. Se quer reconstruir o sistema completo da sua casa, comece pelo Home. A coleção completa dá os dois.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Quais formas de pagamento são aceitas? <span class="faq-chevron">▾</span></div>
+      <div class="faq-a">Pix, boleto bancário, cartão de crédito (parcelado) e cartão de débito. O pagamento é processado com segurança pela Hotmart.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Como funciona a garantia? <span class="faq-chevron">▾</span></div>
+      <div class="faq-a">7 dias a partir da compra. Não ficou satisfeita? Responda ao e-mail de entrega pedindo o reembolso e processamos o valor completo. Sem perguntas.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Tem assinatura ou pagamento recorrente? <span class="faq-chevron">▾</span></div>
+      <div class="faq-a">Não. Pagamento único, acesso vitalício. Você é dona dos livros. Sem cobranças recorrentes, sem aplicativo necessário.</div>
+    </div>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <h2 class="serif">Sua casa não precisa<br>de mais esforço.<br>Precisa de um sistema melhor.</h2>
+  <p>Escolha o livro que resolve o problema de hoje — ou leve a biblioteca completa.</p>
+  <button class="btn-buy" onclick="document.getElementById('livros').scrollIntoView({behavior:'smooth'})">Ver as três opções →</button>
+  <div class="kanji-line">整った家は、整った心をつくる。</div>
+</div>
+
+<footer>
+  <div class="footer-logo">O MÉTODO YUKI</div>
+  <div class="footer-links">Contato · Termos · Política de Privacidade</div>
+</footer>
+
+<script>
+function updateTimer(){
+  var el=document.getElementById("timer");
+  if(!el)return;
+  var parts=el.textContent.split(":").map(Number);
+  var total=parts[0]*3600+parts[1]*60+parts[2];
+  if(total<=0){el.textContent="00:00:00";return;}
+  total--;
+  var h=Math.floor(total/3600),m=Math.floor((total%3600)/60),s=total%60;
+  el.textContent=[h,m,s].map(function(n){return String(n).padStart(2,"0")}).join(":");
+}
+setInterval(updateTimer,1000);
+document.querySelectorAll(".faq-item").forEach(function(item){
+  item.addEventListener("click",function(){this.classList.toggle("open");});
+});
+</script>
+</body>
+</html>
